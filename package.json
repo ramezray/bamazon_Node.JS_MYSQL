@@ -1,0 +1,25 @@
+{
+  "name": "bamazon_node.js_mysql",
+  "version": "1.0.0",
+  "description": "node.js with MYSQL",
+  "main": "bamazonCustomer.js",
+  "dependencies": {
+    "inquirer": "^6.2.1",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramezray/bamazon_Node.JS_MYSQL.git"
+  },
+  "author": "Ray Wasif",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramezray/bamazon_Node.JS_MYSQL/issues"
+  },
+  "homepage": "https://github.com/ramezray/bamazon_Node.JS_MYSQL#readme"
+}
