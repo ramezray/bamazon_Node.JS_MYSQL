@@ -45,7 +45,7 @@ function ask_manager() {
                 break;
             case "Add New Product":
                 add_new_produect()
-               // console.log("new");
+                // console.log("new");
                 break;
             case ">>>>Exit":
                 process.exit();
@@ -85,28 +85,25 @@ function add_to_inventory() {
 
     }]).then(function (answer) {
         var ID = answer.item_ID;
-        var new_quantity = answer.add_quantity;
-        update_DB(ID, new_quantity);
-        show_all_items();
+        var add_quantity = answer.add_quantity;
+        // get_quantity(ID, add_quantity);
+        update_DB(ID, add_quantity);
+        console.log("**********Quantity updated!!******************");
         ask_manager();
-        // console.log(answer.item_ID);
-        // console.log(answer.add_quantity);
-
     })
 }
 
 function show_all_items() {
     connection.query("select * from products", function (err, res) {
         if (err) throw err;
-        console.log("connected!!");
+        console.log("");
         console.table(res);
     })
 }
 
 function update_DB(ID, new_quantity) {
-    connection.query(`UPDATE products SET stock_quantity = ${new_quantity} WHERE item_id = ${ID}`, function (err) {
+    connection.query(`update products set stock_quantity = stock_quantity + ${new_quantity} where item_id = ${ID}`, function (err) {
         if (err) throw err;
-        console.log("record updated!!!!!!!!!!")
     })
 
 }
@@ -133,21 +130,20 @@ function add_new_produect() {
         message: "What is quantity?"
 
     }]).then(function (answer) {
-        var ID = answer.item_ID;
-        var new_quantity = answer.add_quantity;
-        update_DB(ID, new_quantity);
-        show_all_items();
-        ask_manager();
-        // console.log(answer.item_ID);
-        // console.log(answer.add_quantity);
+        var product_name = answer.product_name;
+        var department_name = answer.department_name;
+        var price = parseFloat(answer.price);
+        var stock_quantity = parseInt(answer.stock_quantity);
+        intsert_data(product_name, department_name, price, stock_quantity)
 
     })
 }
 
 function intsert_data(product_name, department_name, price, stock_quantity) {
-    connection.query(`insert into products (product_name, department_name, price, stock_quantity) values (${product_name}, ${department_name}, ${price}, ${stock_quantity})`, function (err) {
+    connection.query(`INSERT INTO products (product_name, department_name, price, stock_quantity) values ("${product_name}", "${department_name}", ${price}, ${stock_quantity})`, function (err) {
         if (err) throw err;
-        console.log("ok!");
+        console.log("***********Item successfully added!***********");
+        ask_manager();
 
     })
 }
