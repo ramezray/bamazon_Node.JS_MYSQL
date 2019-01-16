@@ -44,6 +44,7 @@ function stock(ID, required_quantity) {
             console.log("we have enough for you");
             get_cost(ID, required_quantity);
             update_DB(ID, required_quantity, back_stock);
+            
 
         } else {
             console.log("Insufficient quantity!");
@@ -56,8 +57,10 @@ function stock(ID, required_quantity) {
 function get_cost(ID, required_quantity) {
     connection.query(`select price from products where item_id = ${ID}`, function (err, res) {
         if (err) throw err;
-        var customer_cost = JSON.stringify(res[0].price)
-        console.log("$" + (customer_cost * required_quantity))
+        var customer_cost = JSON.stringify(res[0].price);
+        let final_cost = customer_cost * required_quantity
+        console.log("Your cost is: $" + (final_cost));
+        product_sold(ID, final_cost);
     })
 }
 
@@ -69,4 +72,10 @@ function update_DB(ID, required_quantity, back_stock) {
         console.log("record updated!!!!!!!!!!")
     })
 
-}
+};
+
+function product_sold(ID, final_cost){
+connection.query(`update products set product_sales = product_sales + ${final_cost} where item_id = ${ID}`, function(err){
+    if (err) throw err;
+})
+};

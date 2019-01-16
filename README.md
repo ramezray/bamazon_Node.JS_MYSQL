@@ -12,6 +12,11 @@
         Allows manager to select Add to inventory and add to any item currently in the store.
         Allows manager to select Add New Product, to add a completely new product to the store.
 
+**bamazonSupervisor app allow the supervisor to:
+        view prduct sales by department, 
+        our app will prompt a list of deparments to select one, than will take the answer and run quary to display a table holds:
+        department ID, name, over head cost, produect sold, and on fly to caluclate the profit and dislay it as well.
+
 
 
 
