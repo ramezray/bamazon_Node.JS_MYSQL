@@ -18,6 +18,14 @@
         department ID, name, over head cost, produect sold, and on fly to caluclate the profit and dislay it as well.
 
 # ScreenShots
+* Customer App
 ![](Images/customer.PNG)
+* Manager App
+![](Images/manager1.PNG)
+![](Images/manager2.PNG)
+![](Images/manager3.PNG)
+![](Images/manager4.PNG)
+* Supervisor App
+![](Images/super1.PNG)
 
 
