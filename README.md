@@ -18,6 +18,6 @@
         department ID, name, over head cost, produect sold, and on fly to caluclate the profit and dislay it as well.
 
 # ScreenShots
-![](images/customer.png)
+![](Images/customer.PNG)
 
 
