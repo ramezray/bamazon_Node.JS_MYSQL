@@ -20,7 +20,7 @@
 # ScreenShots
 * Customer App
 ![](Images/customer.PNG)
-
+* 
 * Manager App
 ![](Images/manager1.PNG)
 ![](Images/manager2.PNG)
