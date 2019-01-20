@@ -17,6 +17,7 @@
         our app will prompt a list of deparments to select one, than will take the answer and run quary to display a table holds:
         department ID, name, over head cost, produect sold, and on fly to caluclate the profit and dislay it as well.
 
-
+# ScreenShots
+![](images/customer)
 
 
