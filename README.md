@@ -29,4 +29,15 @@
 * Supervisor App
 - ![](Images/super1.PNG)
 
+# Technologies used
+* JavaScript
+* Node.js
+* mysql NPM
+* inquire NPM
+* chalk NPM
+* Path
+ 
+ # Author
+ *Ray Wasif*
+
 
