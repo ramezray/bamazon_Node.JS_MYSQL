@@ -24,6 +24,7 @@ inq.prompt(
     switch (Choice) {
         case "View Product Sales by Department":
             display_dep();
+            
             break;
         case "Create New Department":
             break;

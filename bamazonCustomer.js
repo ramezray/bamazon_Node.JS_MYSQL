@@ -1,5 +1,6 @@
 var mysql = require('mysql');
 var inq = require('inquirer');
+const chalk = require('chalk');
 // create connection
 
 var connection = mysql.createConnection({
@@ -12,7 +13,7 @@ var connection = mysql.createConnection({
 //select all from DB
 connection.query("select * from products", function (err, res) {
     if (err) throw err;
-    console.log("connected!!");
+    console.log(chalk.blue.bgRed.bold("CONNECTED!!"));
     console.table(res);
     ask_customer();
 })
@@ -29,8 +30,6 @@ function ask_customer() {
         var ID = parseInt(answer.ID_question);
         var required_quantity = parseInt(answer.quantity_question)
 
-        console.log(ID);
-        console.log(required_quantity)
         stock(ID, required_quantity)
     })
 }
@@ -39,15 +38,15 @@ function stock(ID, required_quantity) {
     connection.query(`select stock_quantity from products where item_id = ${ID}`, function (err, res) {
         if (err) throw err;
         var back_stock = JSON.stringify(res[0].stock_quantity)
-        console.log(back_stock);
+        console.log(chalk.blue.bgRed.bold("Our records shows that we have: " + back_stock));
         if (back_stock >= required_quantity) {
-            console.log("we have enough for you");
+            console.log(chalk.blue.bgRed.bold("We have enough for you"));
             get_cost(ID, required_quantity);
             update_DB(ID, required_quantity, back_stock);
             
 
         } else {
-            console.log("Insufficient quantity!");
+            console.log(chalk.blue.bgRed.bold("Insufficient quantity!, Please try again"));
             ask_customer();
 
         }
@@ -59,7 +58,7 @@ function get_cost(ID, required_quantity) {
         if (err) throw err;
         var customer_cost = JSON.stringify(res[0].price);
         let final_cost = customer_cost * required_quantity
-        console.log("Your cost is: $" + (final_cost));
+        console.log(chalk.blue.underline.bold("Your cost is: $" + (final_cost)));
         product_sold(ID, final_cost);
     })
 }
@@ -69,7 +68,8 @@ function update_DB(ID, required_quantity, back_stock) {
 
     connection.query(`UPDATE products SET stock_quantity = ${new_back_stock} WHERE item_id = ${ID}`, function (err) {
         if (err) throw err;
-        console.log("record updated!!!!!!!!!!")
+        console.log(chalk.blue.bgRed.bold("record updated!!!!!!!!!!"));
+        ask_customer();
     })
 
 };
