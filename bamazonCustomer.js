@@ -6,7 +6,7 @@ const chalk = require('chalk');
 var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "r2005moner",
+    password: "",
     database: "bamazon_db"
 });
 
