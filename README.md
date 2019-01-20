@@ -19,15 +19,14 @@
 
 # ScreenShots
 * Customer App
-![](Images/customer.PNG)
-* 
+- ![](Images/customer.PNG) 
 * Manager App
-![](Images/manager1.PNG)
-![](Images/manager2.PNG)
-![](Images/manager3.PNG)
-![](Images/manager4.PNG)
+- ![](Images/manager1.PNG)
+- ![](Images/manager2.PNG)
+- ![](Images/manager3.PNG)
+- ![](Images/manager4.PNG)
 
 * Supervisor App
-![](Images/super1.PNG)
+- ![](Images/super1.PNG)
 
 
