@@ -18,6 +18,8 @@
         view prduct sales by department, 
         our app will prompt a list of deparments to select one, than will take the answer and run quary to display a table holds:
         department ID, name, over head cost, produect sold, and on fly to caluclate the profit and dislay it as well.
+# App Demo
+https://drive.google.com/file/d/1IQE_Ecq5ZJMKTNl4MFstO2QVf74FHR7R/view
 
 # ScreenShots
 * Customer App
