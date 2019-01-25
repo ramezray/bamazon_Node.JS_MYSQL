@@ -21,6 +21,11 @@
 # App Demo
 https://drive.google.com/file/d/1IQE_Ecq5ZJMKTNl4MFstO2QVf74FHR7R/view
 
+# How to Run in Your PC:
+ - Clone the app from github using thsi link: https://github.com/ramezray/bamazon_Node.JS_MYSQL.git
+ - Run NPM i mysql inquire chalk (make sure you have node.js installed)
+ - From same dir run "node bamazonCustomer.js OR node bamazonManager.js OR node bamazonSupervisor.js
+
 # ScreenShots
 * Customer App
 - ![](Images/customer.PNG) 
